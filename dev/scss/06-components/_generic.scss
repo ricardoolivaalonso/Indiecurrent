@@ -1,0 +1,11 @@
+.h-icon,
+.p-icon{
+    object-fit: contain;
+    padding: 0 $gap / 3.5;
+    cursor: pointer;
+}
+.h-icon{
+    width: 60px;
+    height: 60px;
+    padding: $gap;
+}

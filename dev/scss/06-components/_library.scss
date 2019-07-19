@@ -1,0 +1,21 @@
+.library{
+    &__button{
+        @include flex(flex, center, center, row, nowrap);
+        background: $gold;
+        width: 250px;
+        &:hover{ background: lighten($gold, 10); }
+    }
+        &__icon{
+            height: 50px;
+            width: 50px;
+            object-fit: contain;
+            padding: 10px;
+            border-right: $border;
+        }
+        &__link{
+            width: calc(100% - 60px);
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+}

@@ -1,0 +1,50 @@
+header.header
+    //-********** MAIN TITLE **********
+    h1.header__main-title.is-hide INDIE CURRENT
+    //-********** PLAYER MENU **********
+    img(src="img/menu.svg", alt="Ícono de menú").header__trigger-menu.h-icon#main-menu__open
+    div.header__generic
+        img(src="img/logo.jpg", alt="Ícono de IC").header__icon.h-icon
+        img(src="img/ic-text.png", alt="").header__title.h-icon    
+    div.player
+        img(src="img/arrow.svg", alt="Ícono de anterior").player__previous.p-icon
+        img(src="img/play.svg", alt="Ícono de play").player__play.p-icon
+        img(src="img/arrow.svg", alt="Ícono de siguiente").player__next.p-icon
+        img(src="img/cover.jpeg", alt="Carátula").player__cover.p-icon
+        div.current
+            a(href="#").current__song Bells Atlas &nbsp;
+            a(href="#").current__artist - &nbsp; Belly &nbsp;
+            a(href="#").current__played 0:00 
+            a(href="#").current__duration 0:00
+        img(src="img/random.svg", alt="Ícono de aleatorio").player__random.h-icon
+        img(src="img/volume.svg", alt="Ícono de volumen").player__volume.h-icon
+    img(src="img/search.svg", alt="Ícono de búsqueda").header__trigger-search.h-icon#search-menu__open
+    img(src="img/list.svg", alt="Ícono de librería").header__trigger-list.h-icon
+    //-********** MAIN MENU **********
+    nav.main-menu#main-menu
+        div.main-menu__generic
+            img(src="img/logo.jpg", alt="Ícono de IndieCurrent").main-menu__icon
+            img(src="img/plus.svg", alt="Ícono de cerrar").main-menu__icon.is-rt45#main-menu__close
+        ul.main-menu__list
+            li.main-menu__item
+                a(href="#").main-menu__link Home
+            li.main-menu__item
+                a(href="#").main-menu__link Music Library
+            li.main-menu__item
+                a(href="#").main-menu__link Features
+            li.main-menu__item
+                a(href="#").main-menu__link News
+            li.main-menu__item
+                a(href="#").main-menu__link Live
+            li.main-menu__item
+                a(href="#").main-menu__link Interview
+            li.main-menu__item
+                a(href="#").main-menu__link Premiere
+        a(href="#").main-menu__terms About
+        a(href="#").main-menu__terms Contact Us
+        a(href="#").main-menu__terms Disclaimer
+    //-********** SEARCH MENU **********
+    div.search-menu#search-menu
+        div.search-menu__generic
+            input(type="text", placeholder="Just start typing to search").search-menu__input
+            img(src="img/plus.svg", alt="Ícono de cerrar").search-menu__icon#search-menu__close.is-rt45

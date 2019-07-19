@@ -1,0 +1,11 @@
+.footer{
+    &__link{
+        font-size: 12px;
+        color: $button;
+        padding: $gap;
+        &--music{
+            color: $gray;
+            text-align: center;
+        }
+    }
+}

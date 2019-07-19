@@ -1,0 +1,34 @@
+doctype html
+html(lang="es", dir="ltr")
+    head
+        meta(name="viewport", content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0")
+        meta(charset="utf-8")     
+        meta(name="author", content="Ricardo Oliva Alonso")
+        meta(name="title", content="Ricardo Oliva Alonso | Desarrollador Web | Indie Current")
+        meta(name="description", content="Hola soy desarrollador web y esta página esta basada en Indie Current.")
+        meta(name="robots", content="index, follow")
+        title Ricardo Oliva Alonso | Desarrollador Web | Indie Current
+           
+        meta(name="theme-color", content="#d6dcb1")      
+        link(rel="stylesheet", href="css/styles.css")  
+        link(href="img/favicon.png", rel="shorcut icon", type="image/x-icon")
+        link(href="https://fonts.googleapis.com/css?family=Lato", rel="stylesheet", type="text/css" )
+        link(href="https://fonts.googleapis.com/css?family=Rozha+One", rel="stylesheet", type="text/css" )
+
+    body
+        //-********** MAIN CONTAINER **********
+        div.main#main
+            include header.pug
+            include posts.pug
+            include menu.pug
+            div.main-content
+                include news.pug
+                include popular.pug
+            include library.pug
+            include footer.pug
+        script( src="js/main.js", defer)
+    
+
+
+
+    

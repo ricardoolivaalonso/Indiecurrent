@@ -1,0 +1,80 @@
+.popular{
+    &__info{
+        color: $gray;
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+    &__generic{
+        width: 100%;
+        @include flex(flex, center, center, row, nowrap);
+        margin: $gap 0;
+    }
+        &__button{
+            background: rgba($gray, .1);
+            color: $gray;
+            flex-grow: 1;
+        }
+    &__item{
+        @include flex(flex, center, center, row, nowrap);
+        margin-bottom: $gap;
+    }
+        &__item-bg{
+            width: 110px;
+            height: 110px;
+            object-fit: cover;
+            margin-right: $gap;
+            cursor: pointer;
+            box-shadow: 7px 7px 0px 0px rgba($gold, 0);
+            &:hover{
+                box-shadow: 7px 7px 0px 0px rgba($gold, 0.75);
+                transition: all .3s ease;
+            }
+        }
+        &__item-info{ width: calc(100% - 110px); }
+            &__item-title{
+                font-size: 18px;
+                color: $button;
+                font-weight: normal;
+            }
+            &__item-author{
+                font-size: 13px;
+                color: $gray;
+                font-style: italic;
+                font-weight: normal;
+                font-family: 'Rozha One', serif;
+            }
+    &__contact{
+        max-width: 400px;
+        @include flex(flex, center, center, column, wrap);
+        align-self: center;
+    }
+        &__touch{
+            line-height: 4;
+            letter-spacing: 2px;
+            color: $black;
+        }
+        &__description{
+            color: $gray;
+            text-align: center;
+            margin-bottom: $gap;
+        }
+        &__input,
+        &__submit{
+            height: 40px;
+            width: 100%;
+            margin-bottom: 15px;
+            border: none;
+            background: rgba($gray, .15);
+            color: $gray;
+            padding: 0 $gap;
+            font-size: 11px;
+            text-align: center;
+            letter-spacing: 1px;
+            cursor: pointer;
+            outline: none;
+        }
+        &__submit{
+            background: $overlay;
+            color: $white;
+        }
+}

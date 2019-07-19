@@ -1,0 +1,31 @@
+h1, h2, h3{ font-family: 'Rozha One', serif; }
+h4{ font-weight: normal; }
+ul{ list-style: none;
+}
+a{
+    text-decoration: none;
+    color: $black;
+}
+input[type="input"],
+button{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 10px;
+    padding: $gap / 2.5 $gap / 2;
+    letter-spacing: 1px;
+}
+span{
+    font-style: italic;
+    font-weight: lighter;
+}
+p{ font-size: 13px; }
+hr{
+    display: none;
+    @media (min-width: $desktop){
+        display: inherit;
+        opacity: .3;
+        margin-right: $gap * 2;
+        margin-left: $gap * 2;
+    }
+}

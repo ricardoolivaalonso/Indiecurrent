@@ -1,0 +1,75 @@
+.main{
+    max-width: 1600px;
+    background: $white;
+    color: $black;
+    font-family: 'Lato', sans-serif;
+    margin: 0 auto;
+}
+.header{
+    @include flex(flex, space-between, center, row, nowrap);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 1600px;
+    height: 60px;
+    z-index: $z-200;
+    background: $white;
+    box-shadow: 0 2px 20px rgba($black,0.075), 0 2px 20px rgba($black,0.075);
+    @media(min-width: 1600px){ left: calc(50% - 800px); }
+}
+.posts{
+    margin-top: 60px;
+    width: 100%;
+    height: auto;
+    background: $overlay;
+    @include flex(flex, space-around, center, row, wrap);
+    @media (min-width: $desktop){ height: 535px; }
+}
+.menu{
+    width: 100%;
+    @include flex(flex, center, center, row, nowrap);
+    @media (min-width: $desktop){ height: 60px; }
+}
+.main-content{
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    @media (min-width: $max-width){
+        @include flex(flex, flex-start, flex-start, row, nowrap);
+        max-width: $max-width;
+    }
+}
+.news{
+    width: 100%;
+    @media (min-width: $max-width){ max-width: 800px; }
+}
+.popular{
+    width: 100%;
+    min-height: 500px;
+    padding: $gap;
+    @include flex(flex, flex-start, flex-start, column, wrap);
+    @media (min-width: $desktop){ padding: $gap $gap * 4;}
+    @media (min-width: $max-width){
+        position: sticky;
+        top: 60px;
+        right: 0;
+        width: calc(100% - 830px);
+        min-height: 500px;
+        padding: 0;
+        margin-top: $gap * 4;
+    }
+}
+.library{
+    @include flex(flex, center, center, row, nowrap);
+    width: 100%;
+    padding: $gap * 8 $gap * 2;
+    border-bottom: $border;
+}
+.footer{
+    @include flex(flex, center, center, column, wrap);
+    width: 100%;
+    margin-bottom: 60px;
+    padding: $gap;
+    @media (min-width: $desktop){ margin-bottom: 0; }
+}

@@ -1,0 +1,48 @@
+.menu{
+    &__list{
+        @include flex(flex, center, center, column, wrap);
+        width: 100%;
+        @media (min-width: $desktop){
+            @include flex(flex, center, center, row, nowrap);
+            height: 100%;
+            max-width: $max-width;
+            border-bottom: 1px solid rgba($black, .25);
+        }
+    }
+        &__item{
+            padding: 0 $gap * 1.25;
+            border-bottom: 1px solid rgba($black, .25);
+            width: 100%;
+            @include flex(flex, center, center, row, nowrap);
+            @media (min-width: $desktop){
+                border-bottom: none;
+                width: auto;
+            }
+        }
+            &__link{
+                height: 60px;
+                font-size: 12.4px;
+                border-bottom: 7px solid transparent;
+                line-height: 5;
+                padding: 0 5px;
+                letter-spacing: 1px;
+                &:hover{ border-bottom: 7px solid $gold; }
+
+                @media (min-width: $desktop){ display: block; }
+            }
+
+            &__link-filter{
+                display: none;
+
+                @media (min-width: $desktop){
+                    display: inherit;
+                    font-weight: bold;
+                    font-style: italic;
+                    font-family: 'Rozha One', serif;
+                    font-weight: lighter;
+                    line-height: 1;
+                    font-size: 14px;
+                    color: $gray;
+                }
+            }
+}

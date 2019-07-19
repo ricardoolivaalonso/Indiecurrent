@@ -1,0 +1,171 @@
+.header{
+    &__generic{ @include flex(flex, center, center, row, nowrap); }
+        &__icon{
+            display: none;
+
+            @media (min-width: $desktop){
+                display: inherit;
+                padding: $gap / 1.25;
+                border-radius: 50%;
+            }
+        }
+        &__title{
+            width: 70%;
+            padding: 0;
+
+            @media (min-width: $desktop){ width: 180px; }
+            @media (min-width: $max-width){
+                border-right: $border;
+                padding-right: $gap;
+            }
+        }
+    //- TRIGGERS
+    &__trigger-menu{ border-right: $border; }
+    &__trigger-search,
+    &__trigger-list{ border-left: $border; }
+    &__trigger-search{
+        display: none;
+        @media (min-width: $desktop){
+            display: inherit;
+        }
+    }
+}
+.player{
+    @include flex(flex, space-around, center, row, nowrap);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: $z-200;
+    padding-left: $gap;
+    border-top: $border;
+    background: $white;
+
+    @media (min-width: $desktop){ border-top: none; }
+    @media (min-width: $desktop){
+        position: relative;
+        width: calc(100% - 420px);
+    }
+    &__previous,
+    &__next{ width: 22.5px;}
+    &__previous{ transform: rotate(180deg); }
+    &__play{
+        width: 45px;
+        border-radius: 50%;
+    }
+    &__cover{
+        width: 45px;
+        border-radius: 50%;
+    }
+    &__volume{
+        display: none;
+        @media (min-width: $max-width){ display: inherit; }
+    }
+}
+.current{
+    @include flex(flex, flex-start, center, row, nowrap);
+    padding: 0 $gap;
+    width: calc(100% - 120px);
+    font-size: 12px;
+
+    &__song{ font-weight: bold; }
+    &__artist{ color: $gray; }
+    &__played,
+    &__duration{
+        display: none;
+        @media (min-width: $desktop){
+            display: inherit;
+            font-style: italic;
+            font-weight: normal;
+            color: $gray;
+            margin-right: $gap / 2;
+        }
+    }
+}
+.main-menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    z-index: $z-200;
+    padding: $gap $gap * 2;
+    overflow-y: scroll;
+    background: $button;
+    transform: translateX(-100vw);
+    transition: all 1s ease-out;
+    @media(min-width: 1600px){ left: calc(50% - 800px); }
+
+    &__generic{
+        @include flex(flex, space-between, center, row, nowrap);
+        margin-bottom: $gap;
+    }
+        &__icon{
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            object-fit: contain;
+            opacity: .5;
+            &:nth-of-type(2){
+                cursor: pointer;
+                &:hover{
+                    transform: rotate(135deg);
+                    transition: all .5s ease;
+                }
+            }
+        }
+    &__link{
+        font-family: 'Rozha One', serif;
+        font-size: 26px;
+        font-weight: normal;
+        line-height: 2;
+        color: $white;
+        &:hover{ color: $gold; }
+    }
+    &__terms{
+        color: $gray;
+        line-height: 2;
+        display: flex;
+        &:hover{
+            text-decoration: underline;
+            color: lighten($gray, 20);
+        }
+    }
+}
+.search-menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: $white;
+    z-index: $z-200;
+    transform: translateX(100vw);
+    transition: all .5s ease-out;
+
+    &__generic{
+        @include flex(flex, space-between, center, row, nowrap);
+        background: $button;
+    }
+    &__input{
+        font-family: 'Rozha One', serif;
+        font-size: 64px ;
+        width: calc(100% -  225px );
+        height: 225px;
+        padding: $gap * 4 $gap  $gap * 2 $gap * 4;
+        color: $gray;
+        border: 0;
+        outline: 0;
+        background: none;
+    }
+    &__icon{
+        height: 60px;
+        width: 60px;
+        margin-right: $gap * 4 ;
+        cursor: pointer;
+        &:hover{
+            transform: rotate(135deg);
+            transition: all .5s ease;
+        }
+    }
+}

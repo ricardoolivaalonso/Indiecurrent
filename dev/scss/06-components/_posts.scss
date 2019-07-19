@@ -1,0 +1,96 @@
+.posts{
+    &__generic{
+        width: 100%;
+        min-height: 265px;
+        @include flex(flex, space-around, center, row, wrap);
+
+        @media (min-width: $desktop){
+            width: 50%;
+            height: 100%;
+        }
+    }
+        &__item{
+            position: relative;
+            width: 100%;
+            height: 265px;
+            @media (min-width: $desktop){
+                width: 50%;
+                height: 50%;
+            }
+            &::after{
+                content: '';
+                position: absolute;
+                top: $gap * 1.25;
+                left: $gap * 1.25;
+                height: 25px;
+                width: 25px;
+                background: url("../img/small.svg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+        &__item--main{
+            @media (min-width: $desktop){
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &__bg{
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: 0;
+        }
+        &__overlay{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: $z-50;
+            @include flex(flex, flex-end, flex-start, column, wrap);
+            background-image:
+                linear-gradient(
+                    to bottom,
+                    rgba($overlay, .25),
+                    rgba($overlay, .8),
+                );
+            cursor: pointer;
+            &:hover{
+                background-image:
+                    linear-gradient(
+                        to bottom,
+                        rgba($overlay, .35),
+                        rgba($overlay, .9),
+                    );
+            }
+        }
+            &__info{
+                position: absolute;
+                z-index: $z-100;
+                color: $white;
+                padding: $gap * 1.5;
+            }
+
+            &__title-main,
+            &__title-item{
+                z-index: 100;
+                font-family: 'Rozha One', serif;
+                font-size: 26px;
+                font-weight: lighter;
+                line-height: 1;
+                @media (min-width: $desktop){
+                    font-size: 48px;
+
+                }
+            }
+            &__title-item{
+                font-size: 24px;
+            }
+            &__link{
+                color: $gray;
+                font-weight: bold;
+                font-size: 12px;
+                letter-spacing: 2px;
+            }
+
+}
