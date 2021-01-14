@@ -1,7 +1,7 @@
 #### Page based on the official website of indiecurrent available until 2018. 
 ##### Main skills
 - responsive design
-- desktop first
+- mobile first
 - pug
 - sass
 - bem
